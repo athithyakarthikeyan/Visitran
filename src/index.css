@@ -1,7 +1,159 @@
-.card-title {
-    color: white;
-    padding: 8px;
+.blue-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('./fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+}
+
+body {
+  font-family: 'SF Pro', sans-serif;
+}
+
+h1 {
+    color: #ffffff; 
+    font-size: 14px;
+}
+
+.input{
+    width: 395px; 
+    background-color: #1D1D1D;
+    color: #ffffff;
+    border: 1px solid #424242;
+	height: 32px;
     margin: 0;
-    display: block;
-    font-weight: normal;
-  }
+}
+.input::placeholder{
+    color:#646464;
+}
+.input:hover{
+    width: 395px; 
+    background-color: #1D1D1D;
+    color: #ffffff;
+    border: 1px solid #424242;
+	
+}
+
+.cancel-button{
+    background-color: #1D1D1D;
+    border: 1px solid #424242; 
+    margin-left: 255px;
+    height: 32px;
+    color: #ffffff
+}
+
+.next-button{
+    background-Color: #1668DC;
+    border: 0; 
+    margin-left: 10px;
+    height: 32px; 
+    color: #ffffff;
+}
+
+.card{
+    color: #ffffff;
+    border-Color:#424242; 
+    width: 136px; 
+    height: 83px;
+    margin: 0 10px;
+    text-align: center;
+    background-Color: #1D1D1D;  
+}
+
+.card-body{
+    color: white;
+    height: 24px;
+    padding: 0;
+    font-weight: lighter;
+}
+
+
+.card-image{
+    width: 30;
+    margin: auto; 
+    margin-top: 15px; 
+}
+
+.card:hover{
+    border-Color:#1668DC; 
+}
+.card:active, .card:focus {
+  border-color: #1668DC;
+}
+
+.config-input{
+    width: 395px;
+    background-Color: #1D1D1D; 
+    border: 1px solid #424242;
+    color: #ffffff;
+    width: 395px; 
+    color: #ffffff;
+    border: 1px solid #424242;
+	height: 32px;
+    margin-bottom: 10px;
+}
+.config-input::placeholder{
+    color:#646464;
+}
+.config-input:hover{
+    width: 395px; 
+    background-color: #1D1D1D;
+    color: #ffffff;
+	
+}
+
+.config-title{
+    padding-bottom: 5px;
+    font-Size: 12px;
+    color:#ffffff;
+}
+
+.first-header{
+    background: #092C4C; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    height: 64px;
+}
+
+.icon-list{
+    display: flex; 
+    align-Items: center;
+    padding-right: 20px;
+}
+
+.second-header{
+    background: #0C3861; 
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-Content: flex-end; 
+}
+
+.project-button{
+    color: white; 
+    margin-Right: 10px; 
+    height: 40px; 
+    background-color: #1668DC; 
+    border: none; 
+    border-Radius: 0px;
+}
+
+.main-menu{
+    background: none; 
+    padding: 0 16px; 
+    display: flex;
+    align-Items: center;
+    justify-Content: flex-start;
+}
