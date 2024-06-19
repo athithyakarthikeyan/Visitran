@@ -1,12 +1,11 @@
-// App.jsx
 import React, { useState } from 'react';
 import { Layout, Menu, Button, Typography, Avatar } from 'antd';
 import { QuestionCircleOutlined, BgColorsOutlined, BellOutlined, CheckOutlined, UserOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import Name from './Name';
-import ChooseConnection from './Chooseconnection';
-import Configuration from './Configuration';
 import Logo from "./assets/89070934.png";
-import "./index.css";
+import Name from './Name';
+import Configuration from './Configuration';
+import ChooseConnection from './Chooseconnection';
+import './index.css';
 
 const { Header, Sider, Content } = Layout;
 const { Title } = Typography;
@@ -80,12 +79,12 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ fontFamily: 'SF Pro', fontWeight: "normal", letterSpacing: "1px" }}>
-      <Layout style={{ minHeight: '100vh' }}>
+    <div className="layout-style" style={{letterSpacing: "1px" }}>
+      <Layout className="layout-style" style={{ minHeight: '100vh' }}>
         <Header className='first-header'>
-          <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '20px' }}>
+          <div className="header-items">
             <img src={Logo} alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
-            <Title level={3} style={{ color: 'white', margin: 0, fontSize: "22px" }}>Visitran</Title>
+            <Title level={3} className="visitran-title">Visitran</Title>
           </div>
           <div className="icon-list">
             <BgColorsOutlined style={iconStyle} />
@@ -98,31 +97,30 @@ function App() {
           <Button className="project-button"><PlusCircleOutlined />Project</Button>
         </div>
         <Layout>
-          <Sider width={300} style={{ background: '#1D1D1D', margin: 0 ,fontFamily: 'SF Pro', fontWeight: "normal", letterSpacing: "1px"}}>
-            <div style={{ padding: '16px', color: 'white' }}>Complete Your Setup</div>
+          <Sider width={300} className="sider-style" style={{ background: '#1D1D1D'}}>
+            <div className="sider-title" style={{paddingLeft:"30px"}}>Complete project setup</div>
             <Menu mode="inline" theme="dark" style={{ backgroundColor: '#1D1D1D' }} onClick={(e) => setCurrentSection(Number(e.key))}>
               {['Name your project', 'Choose your connection', 'Configure your environment', 'Setup a repository'].map((item, index) => (
                 <Menu.Item
-                key={index}
-                className="main-menu"
-                style={{
-                  borderLeft: `4px solid ${currentSection === index ? '#1668DC' : '#1D1D1D'}`,
-                  backgroundColor: currentSection === index ? '#1D1D1D' : 'transparent',
-                }}
-                onClick={(e) => setCurrentSection(Number(e.key))}
-              >
-                <div
-                  className="blue-circle"
+                  key={index}
+                  className={`main-menu ${completedSections[index] ? 'completed-section' : ''}`}
                   style={{
-                    fontSize: 14,
-                    color: '#ffffff',
-                    backgroundColor: completedSections[index] ? '#111A2C' : currentSection === index ? '#1668DC' : '#303030',
+                    backgroundColor: currentSection === index ? '#1D1D1D' : 'transparent',
+                    color: completedSections[index] ? 'white' : 'grey',
+                    fontSize:"14px"
                   }}
+                  onClick={(e) => setCurrentSection(Number(e.key))}
                 >
-                  {completedSections[index] ? <CheckOutlined className="checkmark" style={{ color: '#1668DC' }} /> : index + 1}
-                </div>
-                {item}
-              </Menu.Item>
+                  <div
+                    className="blue-circle"
+                    style={{
+                      backgroundColor: completedSections[index] ? '#111A2C' : currentSection === index ? '#1668DC' : '#303030',
+                    }}
+                  >
+                    {completedSections[index] ? <CheckOutlined className="checkmark" style={{ color: '#1668DC' }} /> : index + 1}
+                  </div>
+                  {item}
+                </Menu.Item>
               ))}
             </Menu>
           </Sider>

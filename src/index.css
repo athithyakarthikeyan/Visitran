@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 12px;
+  font-size: 14px;
   margin-right: 8px;
 }
 
@@ -171,3 +171,95 @@ h1 {
   .card.selected {
     border: 2px solid #1668DC;
   }
+
+.layout-style{
+    background: #000000;
+    font-Family: SF Pro;
+    font-Weight: lighter !important;
+}
+
+.content-style{
+    margin: 0;
+    margin-Top: 40px; 
+    background-color: #000000;
+}
+
+.completed-section {
+    color: white !important; /* Ensure the font color is white */
+  }
+
+.content1{
+    margin-top: 130;
+    padding: 24;
+    background: #000000; 
+}
+
+.title-style{
+    padding-Bottom: 5px !important; 
+    font-Size: 14px !important;
+    color: #ffffff !important; 
+    font-Weight:lighter !important;
+}
+
+.sider-style{
+    background-color: '#1D1D1D';
+    margin: 0;
+    font-Family: SF Pro;
+    font-Weight: normal;
+}
+
+.sider-title{
+    font-Size:14px;
+    padding: 16px; 
+    color: white;
+    padding-Left:30px;
+    padding-top:30px;
+}
+
+.header-style{
+    height: '40px';
+    margin-Right: '10px'
+}
+
+.visitran-title{
+    color: white !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    padding-Left:10px !important;
+}
+
+.header-items{
+    display: flex;
+    align-Items: center; 
+    padding-Left: 20px;
+}
+
+.image-style{
+    margin: auto; 
+    margin-Top: 20px; 
+    margin-Bottom: 5px;
+}
+
+.card-title{
+    color: white;
+    font-Weight: normal; 
+    font-Size:16px;
+}
+
+.connection-logo{
+    width: 16px;
+    height: 16px; 
+    margin-Right: 8;
+}
+
+.question-style{
+    color: grey; 
+    margin-Left: 1px; 
+    width: 14px;
+}
+
+.para-style{
+    padding-Bottom: 20px;
+    font-Size: 12px;
+    color: #ffffff; 
+}

@@ -7,48 +7,44 @@ const { Title, Paragraph } = Typography;
 
 const Configuration = ({ selectedCard, connectionName, connectionLogo, handleNextClick }) => {
   return (
-    <Layout style={{ background: "#000000", fontFamily: 'SF Pro', fontWeight: "normal", letterSpacing: "1px" }}>
+    <Layout className="layout-style">
       <Content style={{ color: "#ffffff", fontWeight: 'normal' }}>
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Configure your environment</Title>
-        <Paragraph style={{ paddingBottom: "20px", fontSize: "12px", color: "#ffffff" }}>
+        <Title className="title-style">Configure your environment</Title>
+        <Paragraph className="para-style">
         This connection you configure here is also known as your project’s development environment, and will enable you to develop<br></br>
         using the IDE! If you’d like extra guidance while completing this step, check out this connection setup guide.
         </Paragraph>
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Connection</Title>
+        <Title className="title-style">Connection</Title>
         <Input
           style={{ backgroundColor: '#1D1D1D' }}
           className="config-input"
           value={connectionName}
           placeholder="Input"
           readOnly
-          prefix={<img src={connectionLogo} alt="Connection Logo" style={{ width: 16, height: 16, marginRight: 8 }} />}
+          prefix={<img src={connectionLogo} alt="Connection Logo" className="connection-logo"/>}
         />
-        <Title style={{ fontSize: "12px", color: "#ffffff" }}>Connection name</Title>
+        <Title className="title-style">Connection name</Title>
         <Input
           style={{ backgroundColor: '#1D1D1D' }}
           className="config-input"
           value={connectionName}
           placeholder="Input"
           readOnly
-          prefix={<img src={connectionLogo} alt="Connection Logo" style={{ width: 16, height: 16, marginRight: 8 }} />}
+          prefix={<img src={connectionLogo} alt="Connection Logo" className="connection-logo" />}
         />
-        <Title style={{ marginTop: "40px", paddingBottom: "15px", fontSize: "12px", color: "#ffffff" }}>
-          Settings <QuestionCircleOutlined style={{ color: "grey", marginLeft: '1px', width: "14px" }} />
+        <Title className="title-style" style={{ marginTop: "40px", paddingBottom: "15px"}}>
+          Settings <QuestionCircleOutlined className="question-logo"/>
         </Title>
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Hostname</Title>
+        <Title className="title-style">Hostname</Title>
         <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Port</Title>
-        <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Database</Title>
-        <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
-        <Title style={{ marginTop: "40px", paddingBottom: "15px", fontSize: "12px", color: "#ffffff" }}>
-          Developer Credentials <QuestionCircleOutlined style={{ color: "grey", marginLeft: '1px', width: "14px" }} />
+        <Title className="title-style" style={{ marginTop: "40px", marginBottom: "15px"}}>
+          Developer Credentials <QuestionCircleOutlined className="question-logo"/>
         </Title>
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Username</Title>
+        <Title className="title-style" >Username</Title>
         <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Password</Title>
+        <Title className="title-style">Password</Title>
         <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
-        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Schema</Title>
+        <Title className="title-style">Schema</Title>
         <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
       </Content>
     </Layout>

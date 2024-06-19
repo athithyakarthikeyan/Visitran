@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Button, Input, Typography } from 'antd';
 import "./index.css";
-
+const { Title, Paragraph } = Typography;
 const { Content } = Layout;
 const { TextArea } = Input;
 
@@ -24,9 +24,9 @@ const Name = ({ projectName, setProjectName, projectDescription, setProjectDescr
   };
 
   return (
-    <Layout style={{ fontFamily: 'SF Pro', fontWeight: "lighter", letterSpacing: "1px" }}>
-      <Content className="content1" style={{ margin: 0, padding: 24, background: '#000000', minHeight: 280 }}>
-        <h1>Name your project</h1>
+    <Layout className="layout-style">
+      <Content className="content1" style={{paddingLeft:"10px"}}>
+      <Title className="title-style"style={{paddingTop:"40px"}}>Name your project</Title>
         <Input
           style={{ backgroundColor: '#1D1D1D' }}
           className="input"
@@ -34,7 +34,7 @@ const Name = ({ projectName, setProjectName, projectDescription, setProjectDescr
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
         />
-        <h1 style={{ marginTop: "20px" }}>Add description</h1>
+        <Title className="title-style" style={{paddingTop:"15px"}} >Add description</Title>
         <TextArea
           style={{ backgroundColor: '#1D1D1D', marginBottom: "20px" }}
           className="input"
