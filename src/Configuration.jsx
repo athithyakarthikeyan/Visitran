@@ -48,6 +48,8 @@ const Configuration = ({ selectedCard, connectionName, connectionLogo, handleNex
         <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
         <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Password</Title>
         <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
+        <Title style={{ paddingBottom: "5px", fontSize: "12px", color: "#ffffff" }}>Schema</Title>
+        <Input style={{ backgroundColor: '#1D1D1D' }} className="config-input" placeholder="Input" />
       </Content>
     </Layout>
   );

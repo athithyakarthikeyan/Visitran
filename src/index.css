@@ -157,3 +157,17 @@ h1 {
     align-Items: center;
     justify-Content: flex-start;
 }
+.next-button-disabled {
+    background-color: #646464 !important;
+    color: #ffffff;
+    border: 0; 
+    margin-left: 10px;
+    height: 32px; 
+  }
+  
+  .next-button:disabled {
+    cursor: not-allowed;
+  }
+  .card.selected {
+    border: 2px solid #1668DC;
+  }

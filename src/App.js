@@ -1,18 +1,15 @@
+// App.jsx
 import React, { useState } from 'react';
-import { Layout, Menu, Button, Card, Typography, Avatar } from 'antd';
+import { Layout, Menu, Button, Typography, Avatar } from 'antd';
 import { QuestionCircleOutlined, BgColorsOutlined, BellOutlined, CheckOutlined, UserOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import Snowflake from "./assets/snowflake-removebg-preview.png";
-import Postgresql from "./assets/Postgresql_elephant.svg.png";
-import Bigquery from "./assets/google-bigquery-logo-1.svg";
-import Redshift from "./assets/aws-redshift2026-removebg-preview.png";
 import Name from './Name';
+import ChooseConnection from './Chooseconnection';
 import Configuration from './Configuration';
 import Logo from "./assets/89070934.png";
 import "./index.css";
 
 const { Header, Sider, Content } = Layout;
 const { Title } = Typography;
-const { Meta } = Card;
 
 function App() {
   const [completedSections, setCompletedSections] = useState([false, false, false, false]);
@@ -21,6 +18,8 @@ function App() {
   const [connectionName, setConnectionName] = useState('');
   const [connectionLogo, setConnectionLogo] = useState('');
   const [clickedCardIndex, setClickedCardIndex] = useState(null);
+  const [projectName, setProjectName] = useState('');
+  const [projectDescription, setProjectDescription] = useState('');
   const iconStyle = {
     color: 'white',
     fontSize: '24px',
@@ -50,34 +49,21 @@ function App() {
     switch (currentSection) {
       case 0:
         return (
-          <Name handleNextClick={handleNextClick} />
+          <Name
+            projectName={projectName}
+            setProjectName={setProjectName}
+            projectDescription={projectDescription}
+            setProjectDescription={setProjectDescription}
+            handleNextClick={handleNextClick}
+          />
         );
       case 1:
         return (
-          <Layout style={{ fontFamily: 'SF Pro', fontWeight: "normal", letterSpacing: "1px" }}>
-            <Content className="content2" style={{ margin: 0, padding: 24, background: '#000000', minHeight: 280 }}>
-              <div style={{ display: "flex", gap: "10px" }}>
-                <Card bodyStyle={{ padding: 0 }} onClick={() => handleCardClick(0, 'Snowflake', Snowflake)} className="card" hoverable 
-                  cover={<img alt="Snowflake" src={Snowflake} style={{ width: 40, margin: 'auto', padding: 0, marginBottom: "5px", marginTop: "15px" }} />}>
-                  <Meta title={<span style={{ color: 'white', fontWeight: "normal" }}>Snowflake</span>} className="card-body" />
-                </Card>
-                <Card bodyStyle={{ padding: 0 }} onClick={() => handleCardClick(1, 'PostGreSQL', Postgresql)} className="card" hoverable 
-                  cover={<img alt="PostGreSQL" src={Postgresql} style={{ width: 24, margin: 'auto', marginTop: "20px", marginBottom: "5px" }} />}>
-                  <Meta title={<span style={{ color: 'white', fontWeight: "normal" }}>PostGreSQL</span>} className="card-body" />
-                </Card>
-                <Card bodyStyle={{ padding: 0 }} onClick={() => handleCardClick(2, 'BigQuery', Bigquery)} className="card" hoverable 
-                  cover={<img alt="BigQuery" src={Bigquery} style={{ width: 24, margin: 'auto', marginTop: "20px", marginBottom: "5px" }} />}>
-                  <Meta title={<span style={{ color: 'white', fontWeight: "normal" }}>BigQuery</span>} className="card-body" />
-                </Card>
-                <Card bodyStyle={{ padding: 0 }} onClick={() => handleCardClick(3, 'Redshift', Redshift)} className="card" hoverable 
-                  cover={<img alt="Redshift" src={Redshift} style={{ width: 40, margin: 'auto', marginTop: "15px", marginBottom: "5px" }} />}>
-                  <Meta title={<span style={{ color: 'white', fontWeight: "normal" }}>Redshift</span>} className="card-body" />
-                </Card>
-              </div>
-              <Button onClick={handleNextClick} className="cancel-button" style={{ marginLeft: "520px", marginTop: "30px" }}>Skip</Button>
-              <Button onClick={handleNextClick} className="next-button" >Next</Button>
-            </Content>
-          </Layout>
+          <ChooseConnection
+            handleCardClick={handleCardClick}
+            handleNextClick={handleNextClick}
+            clickedCardIndex={clickedCardIndex}
+          />
         );
       case 2:
         return (
