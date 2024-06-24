@@ -31,6 +31,7 @@ h1 {
     border: 1px solid #424242;
 	height: 32px;
     margin: 0;
+    background-Color: #1D1D1D !important;
 }
 .input::placeholder{
     color:#646464;
@@ -39,7 +40,6 @@ h1 {
     width: 395px; 
     background-color: #1D1D1D;
     color: #ffffff;
-    border: 1px solid #424242;
 	
 }
 
@@ -59,23 +59,26 @@ h1 {
     color: #ffffff;
 }
 
-.card{
+.card {
     color: #ffffff;
-    border-Color:#424242; 
-    width: 136px; 
+    border-color: #424242;
+    width: 136px;
     height: 83px;
     margin: 0 10px;
     text-align: center;
-    background-Color: #1D1D1D;  
+    background-color: #1D1D1D;
+    cursor: pointer;
+    padding-bottom: 0; /* Adjusted padding */
+    vertical-align: top; /* Align content to the top */
 }
 
-.card-body{
+.card-body {
     color: white;
     height: 24px;
-    padding: 0;
+    padding: 0; /* Remove padding */
     font-weight: lighter;
+    margin: 4px 0 0 0; /* Adjusted margin */
 }
-
 
 .card-image{
     width: 30;
@@ -84,11 +87,9 @@ h1 {
 }
 
 .card:hover{
-    border-Color:#1668DC; 
+  border-Color:#1668DC; 
 }
-.card:active, .card:focus {
-  border-color: #1668DC;
-}
+
 
 .config-input{
     width: 395px;
@@ -168,10 +169,24 @@ h1 {
   .next-button:disabled {
     cursor: not-allowed;
   }
-  .card.selected {
+.card.selected {
     border: 2px solid #1668DC;
+    width: 136px; 
+      height: 83px;
+      margin: 0 10px;
+      text-align: center;
+      background-Color: #1D1D1D; 
+      padding: 0; /* Remove padding */
+    font-weight: lighter;
+}
+.card:active{
+    border-color: #1668DC;
+    width: 136px; 
+      height: 83px;
+      margin: 0 10px;
+      text-align: center;
+      background-Color: #1D1D1D;  
   }
-
 .layout-style{
     background: #000000;
     font-Family: SF Pro;
@@ -185,12 +200,12 @@ h1 {
 }
 
 .completed-section {
-    color: white !important; /* Ensure the font color is white */
+    color: white !important;
   }
 
 .content1{
     margin-top: 130;
-    padding: 24;
+    padding-left: 20px;
     background: #000000; 
 }
 
@@ -206,6 +221,7 @@ h1 {
     margin: 0;
     font-Family: SF Pro;
     font-Weight: normal;
+    font-size: 16px;
 }
 
 .sider-title{
@@ -263,3 +279,80 @@ h1 {
     font-Size: 12px;
     color: #ffffff; 
 }
+.input {
+    width: 395px;
+    background-color: #1D1D1D;
+    color: #ffffff;
+    border: 1px solid #424242;
+    height: 32px;
+    margin: 0;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 395px;   
+    margin-top: 20px;
+  }
+
+   
+  .button-container-2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 645px;   
+    margin-top: 20px;
+  }
+  
+  .cancel-button {
+    background-color: #1D1D1D;
+    border: 1px solid #424242;
+    height: 32px;
+    color: #ffffff;
+    margin-right: 10px;
+  }
+  
+  .next-button {
+    background-color: #1668DC;
+    border: none;
+    height: 32px;
+    color: #ffffff;
+  }
+  
+  .next-button-disabled {
+    background-color: #646464 !important;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .next-button:disabled {
+    cursor: not-allowed;
+  }
+
+  .card-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .cancel-button {
+    background-color: #1D1D1D;
+    border: 1px solid #424242;
+    height: 32px;
+    color: #ffffff;
+    margin-right: 10px;
+  }
+  
+  .next-button {
+    background-color: #1668DC;
+    border: none;
+    height: 32px;
+    color: #ffffff;
+  }
+  
+  .next-button:disabled {
+    cursor: not-allowed;
+  }
