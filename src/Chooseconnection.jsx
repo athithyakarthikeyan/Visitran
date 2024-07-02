@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Layout, Button, Card } from 'antd';
 import Meta from 'antd/lib/card/Meta';
+import axios from 'axios';
 import Snowflake from "./assets/snowflake-removebg-preview.png";
 import Postgresql from "./assets/Postgresql_elephant.svg.png";
 import Bigquery from "./assets/google-bigquery-logo-1.svg";
@@ -10,46 +11,43 @@ import "./index.css";
 const { Content } = Layout;
 
 const ChooseConnection = ({ handleCardClick, handleNextClick, clickedCardIndex, isNextButtonDisabled }) => {
+  const [datasources, setDatasources] = useState([
+    { name: 'Snowflake', image: Snowflake },
+    { name: 'PostGreSQL', image: Postgresql },
+    { name: 'BigQuery', image: Bigquery },
+    { name: 'Redshift', image: Redshift },
+  ]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/v1/datasources');
+        if (response.data.length > 0) {
+          setDatasources(response.data);
+        }
+      } catch (error) {
+        console.error('Error fetching datasources:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <Layout className="layout-style">
       <Content className="content-style">
         <div style={{ display: "flex", gap: "10px" }}>
-          <Card
-            bodyStyle={{ padding: 0 }}
-            onClick={() => handleCardClick(0, 'Snowflake', Snowflake)}
-            className={`card ${clickedCardIndex === 0 ? 'selected' : ''}`}
-            hoverable
-            cover={<img alt="Snowflake" src={Snowflake} className="image-style" style={{ width: "35px" }} />}
-          >
-            <Meta title={<span className="card-title" style={{ paddingBottom: "30px" }}>Snowflake</span>} className="card-body" />
-          </Card>
-          <Card
-            bodyStyle={{ padding: 0 }}
-            onClick={() => handleCardClick(1, 'PostGreSQL', Postgresql)}
-            className={`card ${clickedCardIndex === 1 ? 'selected' : ''}`}
-            hoverable
-            cover={<img alt="PostGreSQL" src={Postgresql} className="image-style" style={{ width: "24px", paddingBottom: "1px" }} />}
-          >
-            <Meta title={<span className="card-title">PostgreSQL</span>} className="card-body" />
-          </Card>
-          <Card
-            bodyStyle={{ padding: 0 }} 
-            onClick={() => handleCardClick(2, 'BigQuery', Bigquery)}
-            className={`card ${clickedCardIndex === 2 ? 'selected' : ''}`}
-            hoverable
-            cover={<img alt="BigQuery" src={Bigquery} className="image-style" style={{ width: "24px", paddingBottom: "1px" }} />}
-          >
-            <Meta title={<span className="card-title" style={{ paddingBottom: "20px" }}>BigQuery</span>} className="card-body" />
-          </Card>
-          <Card
-            bodyStyle={{ padding: 0 }}
-            onClick={() => handleCardClick(3, 'Redshift', Redshift)}
-            className={`card ${clickedCardIndex === 3 ? 'selected' : ''}`}
-            hoverable
-            cover={<img alt="Redshift" src={Redshift} className="image-style" style={{ width: "30px", paddingBottom: "1px" }} />}
-          >
-            <Meta title={<span className="card-title">Redshift</span>} className="card-body" />
-          </Card>
+          {datasources.map((datasource, index) => (
+            <Card
+              key={index}
+              bodyStyle={{ padding: 0 }}
+              onClick={() => handleCardClick(index, datasource.name, datasource.image)}
+              className={`card ${clickedCardIndex === index ? 'selected' : ''}`}
+              hoverable
+              cover={<img alt={datasource.name} src={datasource.image} className="image-style" style={{ width: "35px" }} />}
+            >
+              <Meta title={<span className="card-title">{datasource.name}</span>} className="card-body" />
+            </Card>
+          ))}
         </div>
         <div style={{ display: "flex", justifyContent: "flex-end", width: "42%", marginTop: "30px" }}>
           <Button className="cancel-button">Skip</Button>
