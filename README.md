@@ -1,6 +1,6 @@
 # Visitran
 
-**Visitran** is a customizable DBMS system offering both **no-code** and **code-based** solutions for customers to manage their databases efficiently. Visitran allows customers to choose their preferred database management system (e.g., PostgreSQL, Redshift) while providing a user-friendly interface to interact with their data.
+**Visitran**, created by **Zipstack** is an open source customizable DBMS system offering both **no-code** and **code-based** solutions for customers to manage their databases efficiently. Visitran allows customers to choose their preferred database management system (e.g., PostgreSQL, Redshift) while providing a user-friendly interface to interact with their data.
 
 ## Features
 - **Custom DBMS Selection:** Customers can choose from multiple database options, such as PostgreSQL, Redshift, MySQL, etc.
